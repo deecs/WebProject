@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Cafeteria - Order Online</title>
+    <link rel="icon" type="image/x-icon" href="logo_round.ico">
+    <link rel="stylesheet" href="./stylesheet.css">
+
+</head>
+<body>
+    <header id="new-header">
+        <div class="header-content" id="header">
+            <div class="logo">
+                <span class="logo-icon" ><img src="logo_round.ico" alt="Logo" id="logo-img"></span>
+                <div class="logo-text">
+                    <h1>ULFS-2 Cafeteria</h1>
+                    <p>Order your favorites online</p>
+            
+                </div>
+            </div>
+            <div>
+                <button id="theme-toggle" onclick="changeTheme()" style="font-size: 3em; border: 0 ;background-color: white;">🌑</button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+    <div class="nav-content">
+        <button class="nav-item active" onclick="filterCategory('freshly-prepared', event)">
+            🍳 Freshly Prepared
+        </button>
+        <button class="nav-item" onclick="filterCategory('salads', event)">
+            🥗 Salads
+        </button>
+        <button class="nav-item" onclick="filterCategory('snacks', event)">
+            🍿 Snacks
+        </button>
+        <button class="nav-item" onclick="filterCategory('beverages', event)">
+            ☕ Beverages
+        </button>
+        <button class="nav-item" onclick="filterCategory('desserts', event)">
+            🍰 Desserts
+        </button>
+    </div>
+</nav>
+
+    <div class="main-container">
+        <div class="products-section">
+            <h2 class="category-title" id="categoryTitle">Freshly Prepared</h2>
+            <p class="category-description" id="categoryDesc">Hot meals made fresh daily</p>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+
+        <div class="cart-sidebar">
+            <div class="cart-container">
+                <div class="cart-header">
+                    <span>🛒</span>
+                    <h2>Your Order</h2>
+                    <div class="cart-count" id="cartCount">0</div>
+                </div>
+                <div class="cart-items" id="cartItems">
+                    <div class="cart-empty">
+                        <div class="cart-empty-icon">🛍️</div>
+                        <p>Your cart is empty</p>
+                    </div>
+                </div>
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (10%)</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                    <div><input type="text" id="inp" class="text" placeholder="enter a discount code" name="dont-save-discount-code" autocomplete="off"><button class="discount" onclick="discount()"> discount</button></div>
+                    <button class="checkout-btn" onclick="checkoutAndStartTimer()">
+                        Proceed to Checkout
+                    </button>
+                    <div id="timerBox" class="timer-box" >
+                    <div class="timer-header">⏳ Order Countdown</div>
+                    <div id="timerText" class="timer-text">00:00</div>
+
+                    <div class="progress-wrap">
+                        <div id="progressBar" class="progress-bar"></div>
+                        </div>
+
+                    <div id="timerStatus" class="timer-status">Preparing...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js">
+    
+    </script>
+</body>
+</html>
